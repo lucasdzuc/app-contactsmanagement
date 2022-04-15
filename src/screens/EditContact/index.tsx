@@ -67,9 +67,16 @@ const EditContact: React.FC = () => {
   const handleUpdateContact = useCallback(async (data: ContactFormData) => {
     try {
       const schema = Yup.object().shape({
-        description: Yup.string().notRequired(),
-        displaycomments: Yup.boolean().required('Campo obrigatório!'),
-        receivecomments: Yup.boolean().required('Campo obrigatório!')
+        name: Yup.string().required('Nome obrigatório'),
+        lastname: Yup.string().required('Sobrenome obrigatório'),
+        telephone: Yup.string().required('Telefone obrigatório'),
+        birthdate: Yup.string().required('Data obrigatória'),
+        email: Yup.string().required('Nome obrigatório').email('Digite um e-mail válido'),
+        street: Yup.string().required('Rua obrigatória'),
+        complement: Yup.string().required('Complemento obrigatório'),
+        district: Yup.string().required('Bairro obrigatório'),
+        city: Yup.string().required('Cidade obrigatória'),
+        uf: Yup.string().required('UF obrigatório'),
       });
 
       await schema.validate(data, {

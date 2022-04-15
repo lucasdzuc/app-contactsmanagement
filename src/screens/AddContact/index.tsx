@@ -46,8 +46,16 @@ const AddingContact: React.FC = () => {
         formRef.current?.setErrors({});
 
         const schema = Yup.object().shape({
+          name: Yup.string().required('Nome obrigatório'),
+          lastname: Yup.string().required('Sobrenome obrigatório'),
+          telephone: Yup.string().required('Telefone obrigatório'),
+          birthdate: Yup.string().required('Data obrigatória'),
           email: Yup.string().required('Nome obrigatório').email('Digite um e-mail válido'),
-          lastname: Yup.string().required('Sobrenome obrigatória'),
+          street: Yup.string().required('Rua obrigatória'),
+          complement: Yup.string().required('Complemento obrigatório'),
+          district: Yup.string().required('Bairro obrigatório'),
+          city: Yup.string().required('Cidade obrigatória'),
+          uf: Yup.string().required('UF obrigatório'),
         });
 
         await schema.validate(data, {
