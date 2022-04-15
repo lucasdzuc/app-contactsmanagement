@@ -77,14 +77,16 @@ const AddingContact: React.FC = () => {
       <KeyboardAvoidingView
         style={{ flex: 1 }}
         behavior={Platform.OS === 'ios' ? 'padding' : undefined}
+        keyboardVerticalOffset={10}
         enabled
+        contentContainerStyle={{ flex: 1 }}
       >
         <ScrollView
           showsVerticalScrollIndicator={false}
           keyboardShouldPersistTaps="handled"
-          contentContainerStyle={{ flex: 1 }}
+          // contentContainerStyle={{ flex: 1 }}
         >
-          <Form style={{ width: '100%', paddingHorizontal: 24 }} ref={formRef} onSubmit={handleAddContact}>
+          <Form style={{ width: '100%', paddingHorizontal: 24, paddingBottom: 40 }} ref={formRef} onSubmit={handleAddContact}>
             <Titles>Contato</Titles>
 
             <Input
