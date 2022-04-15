@@ -6,6 +6,7 @@ Aplicavo de gerenciamento de contatos.
 - [x] Listagem de contatos;
 - [x] Detalhes do contato;
 - [x] Adicionar contato;
+- [x] Editar contato;
 - [x] Remover Contato;
 
 ## ✨ **Tecnologias**

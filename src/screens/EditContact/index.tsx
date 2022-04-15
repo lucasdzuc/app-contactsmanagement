@@ -198,7 +198,7 @@ const EditContact: React.FC = () => {
                 formRef.current?.submitForm();
               }}
             >
-              Cadastrar
+              Atualizar
             </Button>
           </Form>
         </ScrollView>

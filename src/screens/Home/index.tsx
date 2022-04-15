@@ -113,11 +113,11 @@ const Home = () => {
           <UserNameHeader>{user.name}</UserNameHeader>
         </AreaUserHeader>
         <AreaButtonsHome>
-          <ButtonLogoutHome onPress={signOut}>
+          <ButtonLogoutHome activeOpacity={0.8} onPress={signOut}>
             <Icon name="log-out" size={24} color="#9DB1B6" />
           </ButtonLogoutHome>
 
-          <ButtonAddContactHeader onPress={() => navigation.navigate('AddContact')}>
+          <ButtonAddContactHeader activeOpacity={0.8} onPress={() => navigation.navigate('AddContact')}>
             <Icon name="plus" size={24} color="#fff" />
           </ButtonAddContactHeader>
         </AreaButtonsHome>
