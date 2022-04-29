@@ -15,6 +15,8 @@ Aplicavo de gerenciamento de contatos.
 -   **Typescript**
 -   **React Native Vector Icons**
 -   **React Navigation Stack**
+-   **Styled-components**
+-   **Yup**
 -   **Axios**
 
 ## 🔖 Layout
@@ -25,21 +27,26 @@ Você pode visualizar o layout do projeto através do [link](https://www.figma.c
 
 Clone o projeto utilizando o git
 
-```cl
-git clone https://github.com/lucasdzuc/contactsmanagement-api.git
+```bash
+$ git clone https://github.com/lucasdzuc/contactsmanagement-api.git
 ```
 
+Entre no diretório do projeto
+
+```bash
+$ cd app-contactsmanagement
+```
 
 Utilize o **yarn** ou o **npm install** para instalar as dependências do projeto.
 Em seguida, inicie o projeto.
 
-```cl
-yarn android
+```bash
+$ yarn android
 ```
 
 ## 📄 Licença
 
-Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE.md) para mais detalhes.
+Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
 
 <br />
 

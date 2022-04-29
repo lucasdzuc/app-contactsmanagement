@@ -79,7 +79,7 @@ const SignIn: React.FC = (): JSX.Element => {
   }, [signIn]);
 
   const navigateSignUp = useCallback(() => {
-    navigation.navigate('SignUp');
+    navigation.navigate('SignUp' as any);
   }, []);
 
   return (

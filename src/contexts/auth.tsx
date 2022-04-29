@@ -81,15 +81,13 @@ const AuthProvider = ({ children }): JSX.Element => {
       await AsyncStorage.setItem('@Contact:token', response.data.token);
       setLoading(false);
     } catch (error) {
-      return (
-        console.log("Error function SignIn:", error),
-        setLoading(false),
-        error
-      );
+        return (
+          console.log(error)
+        );
     }
   }, []);
 
-  const signOut = useCallback(async (data: void) => {
+  const signOut = useCallback(async () => {
     try {
       setLoading(true);
       await AsyncStorage.removeItem('@Contact:user');
