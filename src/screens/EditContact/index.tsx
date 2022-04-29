@@ -47,7 +47,7 @@ const EditContact: React.FC = () => {
   const route = useRoute();
   const { goBack, navigate } = useNavigation();
 
-  const { _id } = route.params;
+  const { _id } = route.params as any;
 
   const [contact, setContact] = useState<ContactFormData[]>([]);
 
@@ -58,10 +58,11 @@ const EditContact: React.FC = () => {
           Authorization: token,
         },
       });
+      formRef.current.setData(response.data)
       setContact(response.data);
     }
     loadPost();
-  }, [token]);
+  }, [_id, token]);
 
   // SUBMIT FORM
   const handleUpdateContact = useCallback(async (data: ContactFormData) => {
@@ -93,6 +94,8 @@ const EditContact: React.FC = () => {
       goBack();
       // navigate('Home');
     } catch (err) {
+      console.log(err);
+
       if (err instanceof Yup.ValidationError) {
         const errorMessages = {};
         err.inner.forEach(error => {
@@ -120,7 +123,7 @@ const EditContact: React.FC = () => {
           <Form
             style={{ width: '100%', paddingHorizontal: 24, paddingBottom: 40 }}
             ref={formRef}
-            initialData={contact}
+            // initialData={contact}
             onSubmit={handleUpdateContact}
           >
             <Titles>Contato</Titles>

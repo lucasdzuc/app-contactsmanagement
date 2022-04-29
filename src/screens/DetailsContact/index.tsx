@@ -72,7 +72,7 @@ const DetailsContact = () => {
   }, [_id]);
 
   function handleNavigateEditContact(_id: string) {
-    navigate('EditContact', { _id })
+    navigate('EditContact', { _id });
   };
 
   // function navigateToDetailsContact(_id: string){
