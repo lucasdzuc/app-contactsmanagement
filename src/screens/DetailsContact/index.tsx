@@ -8,6 +8,8 @@ import api from '../../services/api';
 
 import useAuth from '../../hooks/useAuth';
 
+import formatPhone from '../../utils/formartPhone';
+
 import {
   Container,
   CardContact,
@@ -23,19 +25,19 @@ import {
 } from './styles';
 
 interface IContact {
-  _id: string;
-  name: string;
-  lastname: string;
-  telephone: string;
-  birthdate: string;
-  email: string;
-  street: string;
-  complement: string;
-  district: string;
-  city: string;
-  uf: string;
-  user: string;
-  createdAt: string;
+  _id?: string;
+  name?: string;
+  lastname?: string;
+  telephone?: string;
+  birthdate?: string;
+  email?: string;
+  street?: string;
+  complement?: string;
+  district?: string;
+  city?: string;
+  uf?: string;
+  user?: string;
+  createdAt?: string;
 }
 
 const DetailsContact = () => {
@@ -45,7 +47,7 @@ const DetailsContact = () => {
   const route = useRoute();
   const { goBack, navigate } = useNavigation();
 
-  const { _id } = route.params;
+  const { _id } = route.params as any;
   // console.log(_id);
 
   const [contact, setContact] = useState<IContact[]>([]);
@@ -111,7 +113,7 @@ const DetailsContact = () => {
 
         <CardContact>
           <NameContact>{contact.name} {contact.lastname}</NameContact>
-          <PhoneContact>{contact.telephone}</PhoneContact>
+          <PhoneContact>{formatPhone(contact.telephone)}</PhoneContact>
           <EmailContact>{contact.email}</EmailContact>
 
           <AreaButtonsCardContact>

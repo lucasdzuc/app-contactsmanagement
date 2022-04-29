@@ -7,6 +7,8 @@ import api from '../../services/api';
 
 import useAuth from '../../hooks/useAuth';
 
+import formatPhone from '../../utils/formartPhone';
+
 import {
   Container,
   Header,
@@ -38,8 +40,8 @@ const Home = () => {
 
   const navigation = useNavigation();
 
-  const [contacts, setContacts] = useState<IContacts[]>([]);
-  const [total , setTotal] = useState(0);
+  const [contacts, setContacts] = useState<IContacts[] | any>([]);
+  const [total , setTotal] = useState<any>(0);
   const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(false);
   const [refreshing, setRefreshing] = useState(false);
@@ -117,7 +119,7 @@ const Home = () => {
             <Icon name="log-out" size={24} color="#9DB1B6" />
           </ButtonLogoutHome>
 
-          <ButtonAddContactHeader activeOpacity={0.8} onPress={() => navigation.navigate('AddContact')}>
+          <ButtonAddContactHeader activeOpacity={0.8} onPress={() => navigation.navigate('AddContact' as any)}>
             <Icon name="plus" size={24} color="#fff" />
           </ButtonAddContactHeader>
         </AreaButtonsHome>
@@ -162,7 +164,7 @@ const Home = () => {
           <CardContact>
             <AreaText>
               <NameContact>{contact.name}</NameContact>
-              <NumberContact>{contact.telephone}</NumberContact>
+              <NumberContact>{formatPhone(contact.telephone)}</NumberContact>
             </AreaText>
             <ButtonDetailContact activeOpacity={0.8} onPress={() => navigateToDetailsContact(contact._id)}>
               <Icon name="arrow-right" size={24} color="#fff" />

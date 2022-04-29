@@ -66,7 +66,7 @@ const AddingContact: React.FC = () => {
             Authorization: token
           }
         });
-        reset();
+        // reset();
       } catch (err) {
         if (err instanceof Yup.ValidationError) {
           const errors = getValidationErrors(err);
@@ -117,6 +117,7 @@ const AddingContact: React.FC = () => {
               autoCorrect={false}
               autoCapitalize="none"
               returnKeyType="next"
+              maxLength={11}
             />
             <Input
               name="birthdate"
