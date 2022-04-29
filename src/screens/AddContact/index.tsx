@@ -125,6 +125,7 @@ const AddingContact: React.FC = () => {
               autoCorrect={false}
               autoCapitalize="none"
               returnKeyType="next"
+              maxLength={7}
             />
             <Input
               name="email"

@@ -49,7 +49,7 @@ const EditContact: React.FC = () => {
 
   const { _id } = route.params as any;
 
-  const [contact, setContact] = useState<ContactFormData[]>([]);
+  // const [contact, setContact] = useState<ContactFormData[]>([]);
 
   useEffect(() => {
     async function loadPost(){
@@ -59,7 +59,7 @@ const EditContact: React.FC = () => {
         },
       });
       formRef.current.setData(response.data)
-      setContact(response.data);
+      // setContact(response.data);
     }
     loadPost();
   }, [_id, token]);
@@ -86,12 +86,15 @@ const EditContact: React.FC = () => {
 
       formRef.current.setErrors({});
 
+      // console.log(data);
+
       await api.put(`contacts/${_id}`, data, {
         headers: {
           Authorization: token
         }
       });
       goBack();
+      Alert.alert("Contato atualizado!")
       // navigate('Home');
     } catch (err) {
       console.log(err);
