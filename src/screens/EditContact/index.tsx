@@ -126,7 +126,6 @@ const EditContact: React.FC = () => {
           <Form
             style={{ width: '100%', paddingHorizontal: 24, paddingBottom: 40 }}
             ref={formRef}
-            // initialData={contact}
             onSubmit={handleUpdateContact}
           >
             <Titles>Contato</Titles>
@@ -151,6 +150,7 @@ const EditContact: React.FC = () => {
               autoCorrect={false}
               autoCapitalize="none"
               returnKeyType="next"
+              maxLength={11}
             />
             <Input
               name="birthdate"
@@ -158,6 +158,7 @@ const EditContact: React.FC = () => {
               autoCorrect={false}
               autoCapitalize="none"
               returnKeyType="next"
+              maxLength={8}
             />
             <Input
               name="email"
