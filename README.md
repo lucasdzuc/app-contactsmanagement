@@ -1,3 +1,6 @@
+![cover](.github/cover.png?style=flat)
+
+
 ## 💻 Projeto
 Aplicavo de gerenciamento de contatos.
 
